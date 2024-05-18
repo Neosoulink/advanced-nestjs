@@ -20,6 +20,7 @@ export class CoffeesService {
 
   async create(createCoffeeDto: CreateCoffeeDto) {
     console.time();
+    console.log(createCoffeeDto);
     const rewardsModuleRef = await this._lazyModuleLoader.load(() =>
       import('../rewards/rewards.module').then((m) => m.RewardsModule),
     );
@@ -40,6 +41,7 @@ export class CoffeesService {
   }
 
   update(id: number, updateCoffeeDto: UpdateCoffeeDto) {
+    console.log(updateCoffeeDto);
     return `This action updates a #${id} coffee`;
   }
 
